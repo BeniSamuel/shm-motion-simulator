@@ -1,42 +1,120 @@
 #root {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background: linear-gradient(135deg, #fef3c7 0%, #ddd6fe 50%, #fce7f3 100%);
+  min-height: 100vh;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Fun hover effects for inputs */
+input:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+input:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Bouncy animation for the mass */
+@keyframes bounce-gentle {
+
+  0%,
+  100% {
+    transform: translateY(0px);
   }
-  to {
-    transform: rotate(360deg);
+
+  50% {
+    transform: translateY(-5px);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
   }
 }
 
-.card {
-  padding: 2em;
+.sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
 }
 
-.read-the-docs {
-  color: #888;
+/* Floating animation for decorative elements */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  33% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+
+  66% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Gradient text animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(-45deg, #ff6b35, #f59e0b, #8b5cf6, #06b6d4);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover effects */
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Button-like input styling */
+input[type="number"] {
+  background: linear-gradient(145deg, #ffffff, #f3f4f6);
+  transition: all 0.3s ease;
+}
+
+input[type="number"]:hover {
+  background: linear-gradient(145deg, #f9fafb, #ffffff);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
